@@ -1,0 +1,39 @@
+<?php
+/* @var $this ItemsController */
+/* @var $dataProvider CActiveDataProvider */
+
+$this->breadcrumbs=array(
+	'Items',
+);
+
+$this->menu=array(
+	array('label'=>'Create Items', 'url'=>array('create')),
+	array('label'=>'Manage Items', 'url'=>array('admin')),
+);
+?>
+
+<h1>Items</h1>
+
+<?php $this->widget('zii.widgets.CListView', array(
+	'dataProvider'=>$dataProvider,
+	'itemView'=>'_view',
+)); ?>
+
+<?$this->beginWidget('zii.widgets.jui.CJuiDialog',array(
+    'id'=>'mydialog',
+    // additional javascript options for the dialog plugin
+    'options'=>array(
+        'title'=>'Dialog box 1',
+        'autoOpen'=>false,
+    ),
+));
+
+    echo 'dialog content here';
+
+$this->endWidget('zii.widgets.jui.CJuiDialog');
+
+// the link that may open the dialog
+echo CHtml::link('open dialog', '#', array(
+   'onclick'=>'$("#mydialog").dialog("open"); return false;',
+));?>
+

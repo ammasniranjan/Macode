@@ -1,0 +1,24 @@
+<?php
+/* @var $this ItemsManufacturersController */
+/* @var $model ItemsManufacturers */
+
+
+
+$this->breadcrumbs=array(
+	'joint',  
+);
+$this->menu=array(
+	array('label'=>'Create ItemsManufacturers', 'url'=>array('create')),
+	array('label'=>'Manage ItemsManufacturers', 'url'=>array('admin')),
+);
+?>
+<h1> List Items and Manufacturers </h1>
+<?php 
+$this->widget('zii.widgets.CListView',array(
+ 'dataProvider'=>$imf,
+'itemView'=>'jointview',
+)); ?>
+
+
+
+
